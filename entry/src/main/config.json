@@ -1,0 +1,48 @@
+{
+  "app": {
+    "bundleName": "net.justinangel.textoverflowexample",
+    "vendor": "premnirmal",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "net.justinangel.textoverflowexample",
+    "name": ".MyApplication",
+    "mainAbility": "net.justinangel.textoverflowexample.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": true
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "net.justinangel.textoverflowexample.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:app_name",
+        "label": "$string:action_settings",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

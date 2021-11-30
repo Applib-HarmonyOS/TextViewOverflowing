@@ -1,0 +1,25 @@
+{
+  "app": {
+    "bundleName": "net.justinangel.textoverflowexample",
+    "vendor": "justinangel",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "net.justinangel.textviewoverflow",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "textviewoverflow",
+      "moduleType": "har"
+    }
+  }
+}
