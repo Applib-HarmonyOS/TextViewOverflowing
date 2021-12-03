@@ -67,12 +67,6 @@ public class ExampleOhosTest {
     }
 
     @Test
-    public void testOverflowText1() {
-        textViewOverflowing = new TextViewOverflowing(context, attrSet);
-        assertNull(textViewOverflowing.getOverflowText());
-    }
-
-    @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
         assertEquals("net.justinangel.textoverflowexample", actualBundleName);
