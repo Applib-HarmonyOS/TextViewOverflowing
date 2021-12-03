@@ -14,7 +14,7 @@ import ohos.app.Context;
  * TextViewOverflowing library file.
  */
 public class TextViewOverflowing extends Text implements Component.LayoutRefreshedListener {
-    private static final String simpleText = "SimpleTextLayout";
+    private static final String SIMPLE_TEXT = "SimpleTextLayout";
     private Paint mTextPaint;
     private String overflowText;
     private boolean isRefreshDone = false;
@@ -79,7 +79,7 @@ public class TextViewOverflowing extends Text implements Component.LayoutRefresh
     }
 
     private int calculateLineHeight() {
-        SimpleTextLayout simpleTextLayout = new SimpleTextLayout(simpleText, mTextPaint, new Rect(), 0);
+        SimpleTextLayout simpleTextLayout = new SimpleTextLayout(SIMPLE_TEXT, mTextPaint, new Rect(), 0);
         return simpleTextLayout.getBottom(0) - simpleTextLayout.getTop(0);
     }
 

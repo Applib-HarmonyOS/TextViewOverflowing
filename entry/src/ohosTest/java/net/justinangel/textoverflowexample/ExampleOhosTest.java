@@ -31,7 +31,6 @@ import static org.junit.Assert.*;
 public class ExampleOhosTest {
     private Context context;
     private AttrSet attrSet;
-    private TextViewOverflowing textViewOverflowing;
     @Before
     public void setUp()  {
 
@@ -61,6 +60,7 @@ public class ExampleOhosTest {
 
     @Test
     public void testOverflowText() {
+        TextViewOverflowing textViewOverflowing;
         textViewOverflowing = new TextViewOverflowing(context,attrSet);
         textViewOverflowing.setOverflowTextViewId(10);
         assertEquals(10, textViewOverflowing.getOverflowTextViewId());
