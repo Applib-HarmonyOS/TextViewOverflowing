@@ -1,45 +1,62 @@
 # TextViewOverflowing
-TextViewOverflowing is a custom android view that allows reflowing from one TextView to another. (a la Windows 8 XAML) 
+TextViewOverflowing is a HMOS library that provides custom view and allows reflowing from one TextView to another.
 
-![TextView reflow example](http://i.imgur.com/9wqpuil.jpg)
 
-### Setup 
+## Source
+Inspired by [JustinAngel/TextViewOverflowing](https://github.com/JustinAngel/TextViewOverflowing) 
 
-1. Grab **TextViewOverflowing.java** and add that to your project (found under *app\src\main\java\net\justinangel\textoverflowexample\* in this repository)
-2. Add a **TextViewOverflowing** and TextView to your UI. 
+## Feature
+This library provides feature to allow reflowing TextView from one textview to another textview.
+![](screenshots/textviewoverflowing.png)
+## Dependency
+1. For using TextViewOverflowing module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
+```groovy
+dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+        testImplementation 'junit:junit:4.13'
+        ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
+        implementation project(':textviewoverflow')
+    }
+```
+2. For using TextViewOverflowing in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
+```groovy
+dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        testImplementation 'junit:junit:4.13'
+    }
 
-          <net.justinangel.textoverflowexample.TextViewOverflowing
-           android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id elit tempus, semper elit et, faucibus leo. Suspendisse urna urna, ornare in rutrum et, rhoncus sed risus."
-           android:id="@+id/TextViewOverflowing" />
-          <TextView android:text="I'm overflow text placeholder"
-            android:id="@+id/overflowTextView" />
+```
 
-3. Hookup the TextViewOverflowing to your overflow TextView. 
-      
-         TextViewOverflowing textViewOverflowing = (TextViewOverflowing) findViewById(R.id.TextViewOverflowing);
-         textViewOverflowing.setOverflowTextViewId(R.id.overflowTextView);
 
-4. Run! Whenever **TextViewOverflowing** is partially hidden the remainder of the text should show up in your overflow TextView. 
+## Usage
 
-### More options 
+#### Xml
 
-- It's possible to manually reflow text by registering to **TextViewOverflowing.setOverflowTextListener**.
- 
-          textViewOverflowing.setOverflowTextListener(new TextViewOverflowing.OverflowTextListener() {
-            @Override
-            public void overflowTextCalculated(String overflowText) {
-                textViewOverflowing.setOverflowTextListener(null);
-                overflowTextView.setText(overflowText);
-            }
-         });
+```xml
+            <net.justinangel.textviewoverflow.TextViewOverflowing
+                ohos:id="$+id:TextViewOverflowing"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:above="$+id:overflowTextView"
+                ohos:align_parent_end="true"
+                ohos:align_top="$+id:imageView"
+                ohos:end_of="$+id:imageView"
+                ohos:left_margin="12vp"
+                ohos:multiple_lines="true"
+                ohos:text="$string:SuperLongText"
+                ohos:text_size="32fp"/>
 
-- It's possible to chain reflow text between multiple TextViewOverflowing. 
+
+```
+
+#### Java
+```java
+TextViewOverflowing textViewOverflowing = (TextViewOverflowing)findComponentById(ResourceTable.Id_TextViewOverflowing);
+textViewOverflowing.setOverflowTextViewId(ResourceTable.Id_overflowTextView);
+```
+
 
 
 ### License 
 Do whatever you'd like with this code. ("MIT license") 
-
-### Me
- - [@JustinAngel](http://twitter.com/JustinAngel)
- - [JustinAngel.net](http://JustinAngel.net)
 

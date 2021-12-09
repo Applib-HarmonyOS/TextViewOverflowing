@@ -1,0 +1,45 @@
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:bottom_padding="$float:vertical_margin"
+    ohos:left_padding="$float:horizontal_margin"
+    ohos:right_padding="$float:horizontal_margin"
+    ohos:top_padding="$float:vertical_margin">
+
+    <net.justinangel.textviewoverflow.TextViewOverflowing
+        ohos:id="$+id:TextViewOverflowing"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:above="$+id:overflowTextView"
+        ohos:align_parent_end="true"
+        ohos:align_top="$+id:imageView"
+        ohos:end_of="$+id:imageView"
+        ohos:left_margin="12vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:SuperLongText"
+        ohos:text_size="32fp"/>
+
+    <Text
+        ohos:id="$+id:overflowTextView"
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:align_parent_start="true"
+        ohos:below="$+id:imageView"
+        ohos:multiple_lines="true"
+        ohos:text="$string:overflow_default_text"
+        ohos:text_alignment="top"
+        ohos:text_size="32fp"
+        ohos:top_margin="0vp"/>
+
+    <Image
+        ohos:id="$+id:imageView"
+        ohos:height="150vp"
+        ohos:width="200vp"
+        ohos:align_parent_end="false"
+        ohos:align_parent_left="false"
+        ohos:align_parent_start="false"
+        ohos:align_parent_top="true"
+        ohos:image_src="$media:justinangel"/>
+
+</DependentLayout>
